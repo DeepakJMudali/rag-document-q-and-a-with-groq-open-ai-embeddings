@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 ## load the GROQ API key from environment variables
 groq_api_key = os.getenv("GROQ_API_KEY")
-# os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 llm = ChatGroq(groq_api_key=groq_api_key, model_name="openai/gpt-oss-20b")
 
 #Create the prompt template
@@ -58,3 +58,4 @@ if st.button("Submit") and question:
     st.write("### Answer:")
 
     st.write(response.content)
+
